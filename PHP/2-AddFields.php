@@ -3,7 +3,7 @@
 /**
  * OK!Sign API example
  *
- * How to upload a document.
+ * How to add fields to a document.
  */
 
 require 'vendor/autoload.php';
