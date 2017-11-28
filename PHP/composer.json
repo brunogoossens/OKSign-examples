@@ -1,0 +1,7 @@
+{
+    "name": "oksign/oksign-php-example",
+    "description": "Example for using OK!Sign Rest API with PHP.",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    }
+}
