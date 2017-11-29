@@ -3,22 +3,22 @@
 /**
  * OK!Sign API example
  *
- * How to upload a document.
+ * Upload a PDF or Word document that needs to be completed and/or signed.
  */
 
-require 'vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 use GuzzleHttp\Client;
 
 // request
 $headers = array(
-  'x-oksign-authorization' => '', // add your own Organisational token
+  'x-oksign-authorization' => '', // Organisational token
   'accept' => 'application/json',
-  'x-oksign-filename' => 'newfile.pdf',
+  'x-oksign-filename' => 'newfilename.pdf',
   'content-type' => 'application/pdf'
 );
 
-$payload = file_get_contents('/Users/brunogoossens/Downloads/test.pdf');
+$payload = file_get_contents('/path/to/file.pdf');
 
 $client = new Client([ 'headers' => $headers, 'body' => $payload ]);
 
@@ -27,7 +27,11 @@ $response = $client->post('https://www.oksign.be/services/rest/v1/document/uploa
 
 if($response->getStatusCode() === 200){
   $response = json_decode($response->getBody()->getContents());
-  echo 'documentID: ' . $response->reason;
+  if($response->status === 'OK'){
+    echo 'documentID: ' . $response->reason;
+  } else {
+    echo 'Error: ' . $response->reason;
+  }
 } else {
   echo 'Upload Failed';
 }

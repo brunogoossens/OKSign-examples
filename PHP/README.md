@@ -8,6 +8,6 @@ To get the examples working. Make sure to install the dependencies with Composer
 
 After installing the dependencies, you can launch an example with the following command. Make sure you changed the example code with your own tokens and file locations.
 
-    php 1-UploadFile.php
-    php 2-AddFields.php
+    php examples/Document.upload.php
+    php examples/Documents.signed.php
     ...

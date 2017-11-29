@@ -3,10 +3,13 @@
 /**
  * OK!Sign API example
  *
- * How to add fields to a document.
+ * Upload a Form Descriptor describing the fields to be put on a previously uploaded document.
+ * The Form Descriptor is generated in the Forms Editor.
+ * In the Templates section of your account, click on the edit button.
+ * The Forms Editor will open. Select the API button to get the Form Descriptor.
  */
 
-require 'vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 use GuzzleHttp\Client;
 
@@ -80,7 +83,11 @@ $response = $client->post('https://www.oksign.be/services/rest/v1/formdesc/uploa
 
 if($response->getStatusCode() === 200){
   $response = json_decode($response->getBody()->getContents());
-  print_r($response->reason);
+  if($response->status === 'OK'){
+    print_r($response->reason);
+  } else {
+    echo 'Error: ' . $response->reason;
+  }
 } else {
   echo 'Error';
 }
