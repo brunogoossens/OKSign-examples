@@ -23,9 +23,9 @@ $response = $client->get('https://www.oksign.be/services/rest/v1/credits/retriev
 
 if($response->getStatusCode() === 200){
   $response = json_decode($response->getBody()->getContents());
-  print_r($response->extratime);
-  print_r($response->quantity);
-  print_r($response->validuntil);
+  print_r($response->reason->extratime);
+  print_r($response->reason->quantity);
+  print_r($response->reason->validuntil);
 } else {
   echo 'Error';
 }

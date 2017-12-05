@@ -3,8 +3,7 @@
 /**
  * OK!Sign API example
  *
- * Retrieve the metadata of a (signed) document.
- * The medata contains more info regarding the signature(s) and the content of the completed fields.
+ * Retrieve a (signed) from the OKSign platform?
  */
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -25,7 +24,7 @@ $response = $client->get('https://www.oksign.be/services/rest/v1/document/retrie
 
 if($response->getStatusCode() === 200){
   $raw = $response->getBody()->getContents();
-  file_put_contents('downloaded.pdf', $raw);
+  file_put_contents('newfile.pdf', $raw);
   echo 'File downloaded';
 } else {
   echo 'Error';
