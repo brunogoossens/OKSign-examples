@@ -1,4 +1,4 @@
-# OKS!Sign examples
+# OK!Sign examples
 
 This repository contains PHP and NodeJS examples for the API of [OKSign.be](www.oksing.be). The examples are based on the documentation found on [www.oksign.be/public/api]().
 
