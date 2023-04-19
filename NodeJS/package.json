@@ -4,7 +4,7 @@
   "description": "Example for using OK!Sign Rest API with NodeJS",
   "license": "MIT",
   "dependencies": {
-    "moment": "^2.29.2",
+    "moment": "^2.29.4",
     "request": "^2.83.0"
   }
 }
